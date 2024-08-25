@@ -15,7 +15,7 @@ export default function Header () {
         </div>
       </div>
 
-      <h1 className="text-4xl text-center mx-32">Hi, I'm Gustavo, a <strong>Fullstack Developer</strong> based in Portugal 🇵🇹</h1>
+      <h1 className="text-2xl text-center mx-2 md:text-4xl">Hi, I'm Gustavo, a <strong>Fullstack Developer</strong> based in Portugal 🇵🇹</h1>
 
       <div className="flex flex-row justify-center items-center gap-4">
         <DownloadCV />
