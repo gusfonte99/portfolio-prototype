@@ -1,33 +1,46 @@
+import Link from "next/link";
 import DownloadCV from "./downloadCV";
 
 export default function Header () {
   
   return (
-    <header id="top" className="flex flex-col justify-center items-center gap-8">
-      <div className="flex flex-col justify-center items-center gap-4">
-        <div className="w-32 h-32 rounded-full bg-white">
-          <div className="w-full h-full scale-90 rounded-full bg-slate-900"></div>
+    <header id="header" className="grow flex flex-row justify-start h-screen pt-52 ml-52">
+      <div className="ml-20 pt-12">
+        <div className="flex flex-col font-semibold">
+          <h1 className="text-9xl">Hi,</h1>
+          <h1 className="text-8xl mt-4">I'm Gustavo,</h1>
+          <h1 className="text-6xl mt-4">a Web Developer based in Portugal</h1>
         </div>
 
-        <div className="flex flex-row justify-center items-center gap-2">
-          <div className="w-3 h-3 rounded-full bg-lime-600"></div>
-          <span className="text-lg font-medium">Available</span>
+        <p className="text-xl text-neutral-500 font-normal mt-6">Fullstack Developer <span className="px-2">/</span> Frontend and Backend proficient</p>
+        
+        <div className="flex flex-row gap-4 mt-10">
+          <Link href="/contact" className="flex justify-center items-center px-8 bg-indigo-700">
+            <span className="text-xl font-medium uppercase">Contact me</span>
+          </Link>
+
+          <DownloadCV />
         </div>
       </div>
 
-      <h1 className="text-2xl text-center mx-2 md:text-4xl">Hi, I'm Gustavo, a <strong>Fullstack Developer</strong> based in Portugal 🇵🇹</h1>
+      <div className="grow flex flex-col justify-start items-start pl-40">
+        <div className="flex flex-col justify-center items-center gap-6">
+          <div className="w-56 h-56 rounded-full bg-white">
+            <div className="flex justify-center items-center w-full h-full scale-90 rounded-full bg-slate-900/95">
+              <svg className="fill-white" xmlns="http://www.w3.org/2000/svg" width="102" height="102" viewBox="0 0 256 256"><path d="M208,56H180.28L166.65,35.56A8,8,0,0,0,160,32H96a8,8,0,0,0-6.65,3.56L75.71,56H48A24,24,0,0,0,24,80V192a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V80A24,24,0,0,0,208,56Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H80a8,8,0,0,0,6.66-3.56L100.28,48h55.43l13.63,20.44A8,8,0,0,0,176,72h32a8,8,0,0,1,8,8ZM128,88a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,88Zm0,72a28,28,0,1,1,28-28A28,28,0,0,1,128,160Z"></path></svg>
+            </div>
+          </div>
 
-      <div className="flex flex-row justify-center items-center gap-4">
-        <DownloadCV />
-
-        <a href="https://www.linkedin.com/in/gusfonte99" target="_blank" className="p-4 rounded-full bg-neutral-500/30">
-          <svg className="fill-neutral-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><path d="M216,104v8a56.06,56.06,0,0,1-48.44,55.47A39.8,39.8,0,0,1,176,192v40a8,8,0,0,1-8,8H104a8,8,0,0,1-8-8V216H72a40,40,0,0,1-40-40A24,24,0,0,0,8,152a8,8,0,0,1,0-16,40,40,0,0,1,40,40,24,24,0,0,0,24,24H96v-8a39.8,39.8,0,0,1,8.44-24.53A56.06,56.06,0,0,1,56,112v-8a58.14,58.14,0,0,1,7.69-28.32A59.78,59.78,0,0,1,69.07,28,8,8,0,0,1,76,24a59.75,59.75,0,0,1,48,24h24a59.75,59.75,0,0,1,48-24,8,8,0,0,1,6.93,4,59.74,59.74,0,0,1,5.37,47.68A58,58,0,0,1,216,104Z"></path></svg>
-        </a>
-  
-        <a href="https://github.com/gusfonte99" target="_blank" className="p-4 rounded-full bg-neutral-500/30">
-          <svg className="fill-neutral-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24ZM96,176a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0ZM88,96a12,12,0,1,1,12-12A12,12,0,0,1,88,96Zm96,80a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140Z"></path></svg>
-        </a>
+          <div className="flex flex-row justify-center items-center gap-3">
+            <div className="flex justify-center items-center relative w-4 h-4">
+              <span className="animate-ping absolute inline-flex w-full h-full rounded-full opacity-75 bg-lime-600"></span>
+              <span className="inline-flex w-full h-full rounded-full bg-lime-600"></span>
+            </div>
+            
+            <span className="text-xl font-medium">Available</span>
+          </div>
+        </div>
       </div>
     </header>
-  )
+  );
 }
