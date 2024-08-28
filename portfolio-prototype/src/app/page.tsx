@@ -1,18 +1,21 @@
+import Navbar from "../../components/navbar";
 import Header from "../../components/header";
 import About from "../../components/about";
 import Projects from "../../components/projects";
-import Footer from "../../components/footer";
+import Experience from "../../components/experience";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-start w-full min-h-screen pt-20 px-4 sm:px-6">
+    <main className="flex flex-col w-full min-h-screen">
+      <Navbar />
+
       <Header />
 
       <About />
 
       <Projects />
 
-      <Footer />
+      <Experience />
     </main>
   );
 }
