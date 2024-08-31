@@ -1,33 +1,53 @@
+import Image from "next/image";
+import { projectsData } from "../lib/data";
+
 export default function Projects() {
   return (
-    <section className="flex flex-col justify-center items-center w-full mt-20">
-      <h2 className="text-2xl font-semibold sm:text-3xl">My Projects</h2>
+    <section id="projects" className="flex flex-col justify-center items-center w-full pl-52 my-20">
+      <h2 className="text-2xl font-semibold sm:text-5xl">My Projects</h2>
 
-      <ul className="flex flex-col justify-center items-center gap-6 w-full mt-8 sm:max-w-2xl">
-        <li className="group grid grid-cols-1 grid-rows-1 w-full rounded-lg bg-slate-800/70 overflow-hidden sm:grid-cols-2 hover:bg-slate-800">
-          <div className="pt-4 pl-5 pr-5 pb-7 sm:pl-10 sm:pt-10 sm:pr-2">
-            <h3 className="text-2xl font-semibold">Aniki</h3>
+      <ul className="flex flex-row gap-6 w-full px-12 mt-20">
+        {projectsData.map((project, index) => {
+          return (
+            <li key={index} className="relative group grid grid-cols-1 grid-rows-1 w-full rounded-md bg-zinc-900 overflow-hidden sm:grid-cols-3 transition-all duration-300 ease-in-out hover:bg-indigo-600">
+              <div className="col-span-2 pt-6 px-5 pb-8">
+                <h3 className="text-3xl font-semibold">{project.title}</h3>
 
-            <p className="font-medium mt-2">
-              An anime forum Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Officiis error obcaecati.
-            </p>
+                <p className="text-lg text-balance font-normal mt-6">
+                  {project.description}
+                </p>
 
-            <div className="mt-4">
-              <ul className="flex flex-row flex-wrap gap-2">
-                <li className="text-sm text-neutral-300 leading-6 font-medium px-3 rounded-full bg-zinc-950">React</li>
-                <li className="text-sm text-neutral-300 leading-6 font-medium px-3 rounded-full bg-zinc-950">React</li>
-                <li className="text-sm text-neutral-300 leading-6 font-medium px-3 rounded-full bg-zinc-950">React</li>
-                <li className="text-sm text-neutral-300 leading-6 font-medium px-3 rounded-full bg-zinc-950">React</li>
-                <li className="text-sm text-neutral-300 leading-6 font-medium px-3 rounded-full bg-zinc-950">React</li>
-              </ul>
-            </div>
-          </div>
+                <div className="mt-4">
+                  <ul className="flex flex-row flex-wrap gap-2">
+                    {project.tags.map((tag, index) => {
+                      return (
+                        <li key={index} className="text-base text-neutral-300 leading-6 font-medium px-3 rounded-full bg-zinc-950">
+                          {tag}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </div>
 
-          <div className="hidden relative sm:inline">
-            <div className="image absolute -right-12 top-8 w-80 h-40 rounded-t-lg shadow-2xl bg-slate-50 transition group-hover:scale-x-105 group-hover:-translate-x-5 group-hover:translate-y-2 group-hover:-rotate-2"></div>
-          </div>
-        </li>
+              <Image
+                className="
+                  absolute -right-28 top-14 object-contain w-72 rounded-t-lg shadow-2xl transition duration-300
+                
+                  group-hover:scale-x-105
+                  group-hover:-translate-x-8
+                  group-hover:translate-y-2
+                  group-hover:-rotate-2"
+                src={project.image}
+                width={undefined}
+                height={undefined}
+                quality={90}
+                priority
+                alt="Project screenshot"
+              />
+            </li>
+          );
+        })}
       </ul>
     </section>
   );
