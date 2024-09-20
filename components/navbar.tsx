@@ -3,8 +3,8 @@ export default function Navbar () {
 
 
   return(
-    <nav className="z-[999] fixed left-0 w-52 h-full bg-neutral-950 border-r border-neutral-400/60">
-      <div className="flex flex-col justify-start items-center w-full pt-10 pb-6">
+    <nav className="z-[999] fixed left-0 w-52 h-full bg-neutral-950 border-r border-neutral-600/60">
+      <div className="flex flex-col justify-start items-center w-full pt-10 pb-6 select-none">
         <div className="flex flex-row justify-center items-center gap-2 w-full">
           <span className="text-8xl font-semibold">g</span>
           <div id="console" className="w-10 h-28 bg-white"></div>
@@ -14,7 +14,7 @@ export default function Navbar () {
         <span className="text-base text-neutral-400 mt-3">Fullstack Developer</span>
       </div>
 
-      <ul className="mt-12 text-center text-neutral-400 text-lg font-light border-t-[1px] border-neutral-400/60 *:py-3 *:border-b-[1px] *:border-neutral-400/60">
+      <ul className="mt-12 text-center text-neutral-400 text-lg font-light border-t-[1px] border-neutral-600/60 *:py-3 *:border-b-[1px] *:border-neutral-600/60">
         <li className="">Home</li>
         <li className="">About</li>
         <li className="">Projects</li>

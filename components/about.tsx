@@ -1,10 +1,10 @@
 export default function About() {
 
   return (
-    <section id="about" className="flex flex-col justify-center items-center w-full pl-52 my-20">
+    <section id="about" className="flex flex-col items-center w-full pl-52 my-20">
       <h2 className="text-2xl font-semibold sm:text-5xl">A little bit about me..</h2>
 
-        <ul className="flex flex-col gap-10 mt-20">
+        <ul className="flex flex-col gap-10 mt-16">
           <li className="place-self-start flex flex-row justify-center items-center gap-8 w-2/3 px-8 py-6 rounded-r-full bg-zinc-900">
             <p className="text-base text-pretty font-normal sm:text-lg">
               After over 2 years of working in retail, looking for a way to break

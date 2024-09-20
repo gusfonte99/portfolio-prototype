@@ -17,7 +17,6 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
     <html lang="en" className="!scroll-smooth">
       <body className={`${inter.className} text-white bg-zinc-950`}>
         {children}
-        {/* <Toaster position="top" /> */}
         <ScrollHint />
         <Footer />
       </body>

@@ -3,10 +3,10 @@ import { projectsData } from "../lib/data";
 
 export default function Projects() {
   return (
-    <section id="projects" className="flex flex-col justify-center items-center w-full pl-52 my-20">
+    <section id="projects" className="flex flex-col items-center w-full pl-52 my-20">
       <h2 className="text-2xl font-semibold sm:text-5xl">My Projects</h2>
 
-      <ul className="flex flex-row gap-6 w-full px-12 mt-20">
+      <ul className="flex flex-row gap-6 w-full px-12 mt-16">
         {projectsData.map((project, index) => {
           return (
             <li key={index} className="relative group grid grid-cols-1 grid-rows-1 w-full rounded-md bg-zinc-900 overflow-hidden sm:grid-cols-3 transition-all duration-300 ease-in-out hover:bg-indigo-600">
@@ -21,7 +21,7 @@ export default function Projects() {
                   <ul className="flex flex-row flex-wrap gap-2">
                     {project.tags.map((tag, index) => {
                       return (
-                        <li key={index} className="text-base text-neutral-300 leading-6 font-medium px-3 rounded-full bg-zinc-950">
+                        <li key={index} className="text-sm text-neutral-300 leading-6 font-medium px-3 rounded-full bg-zinc-950">
                           {tag}
                         </li>
                       );
@@ -32,7 +32,7 @@ export default function Projects() {
 
               <Image
                 className="
-                  absolute -right-28 top-14 object-contain w-72 rounded-t-lg shadow-2xl transition duration-300
+                  absolute -right-36 top-14 object-contain w-72 rounded-t-lg shadow-2xl transition duration-300
                 
                   group-hover:scale-x-105
                   group-hover:-translate-x-8

@@ -8,11 +8,11 @@ export default function Experience() {
 
       <div className="relative flex flex-col items-center w-full mt-16">
         <div className="absolute w-1 h-full bg-indigo-400"></div>
-        {experiencesData.map((experience) => {
+        {experiencesData.map((experience, index) => {
           return (
-            <div className="group relative grid grid-cols-2 gap-x-32 w-full mb-16 last:mb-0">
-              <div className="place-self-end w-[28rem] pt-4 pb-6 px-6 rounded-lg border-4 border-indigo-400 bg-zinc-900 group-odd:order-last group-odd:place-self-start">
-                <h3 className="text-xl font-semibold">{experience.title}</h3>
+            <div key={index} className="group relative grid grid-cols-2 gap-x-32 w-full mb-16 last:mb-0">
+              <div className="place-self-end w-[28rem] pt-4 pb-6 px-6 rounded-lg bg-zinc-900 group-odd:order-last group-odd:place-self-start">
+                <h3 className="text-xl text-indigo-300 font-semibold">{experience.title}</h3>
 
                 <p className="text-base font-medium">{experience.location}</p>
 
