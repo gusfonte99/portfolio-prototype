@@ -8,16 +8,16 @@ export const links = [
     hash: "#home",
   },
   {
+    name: "Skills",
+    hash: "#skills",
+  },
+  {
     name: "About",
     hash: "#about",
   },
   {
     name: "Projects",
     hash: "#projects",
-  },
-  {
-    name: "Skills",
-    hash: "#skills",
   },
   {
     name: "Experience",
@@ -32,7 +32,8 @@ export const experiencesData = [
     description:
       "I graduated after 3 months of studying, with over 400h. And now looking for the next step, while learning new technologies and frameworks.",
     date: "Jan 2024 - Present",
-    iconPath: "/icons/school_fill-icon.png",
+    iconName: "graduation",
+    iconSize: "38px"
   },
   {
     title: "Salesman - Worten",
@@ -40,7 +41,7 @@ export const experiencesData = [
     description:
       "Worked as a Salesman, employing strong product knowledge, personalized customer service, and upselling techniques.",
     date: "Feb 2023 - May 2023",
-    iconPath: "/icons/work_fill-icon.png",
+    iconName: "briefcase",
   },
   {
     title: "Salesman - Staples",
@@ -48,7 +49,7 @@ export const experiencesData = [
     description:
       "Worked as a Salesman, later was responsible for new staff training, improving team performance.",
     date: "Sept 2022 - Jan 2023",
-    iconPath: "/icons/work_fill-icon.png",
+    iconName: "briefcase",
   },
   {
     title: "Customer Service Agent - Fnac",
@@ -56,7 +57,7 @@ export const experiencesData = [
     description:
       "Provided friendly and attentive customer service, helping shoppers find products and answering questions to enhance their shopping experience.",
     date: "Feb 2022 - June 2022",
-    iconPath: "/icons/work_fill-icon.png",
+    iconName: "briefcase",
   },
   {
     title: "Dropped out of university",
@@ -64,7 +65,8 @@ export const experiencesData = [
     description:
       "Realizing the course I was taking wasn't for me, I dropped out and started applying for jobs in retail while looking for opportunities to study in the Tech field.",
     date: "2019 - 2021",
-    iconPath: "/icons/school_fill-icon.png",
+    iconName: "graduation",
+    iconSize: "38px"
   },
   {
     title: "Moved back to Portugal",
@@ -72,7 +74,7 @@ export const experiencesData = [
     description:
       "After studying in France for 4 years, I decided to come back to Portugal to pursue higher education.",
     date: "2014 - 2018",
-    iconPath: "/icons/travel-icon.png",
+    iconName: "plane-take-off",
   },
 ] as const;
 

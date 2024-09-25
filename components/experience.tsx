@@ -1,7 +1,10 @@
-import Image from "next/image";
+'use client'
+
+import Icon from "./icon";
 import { experiencesData } from "../lib/data";
 
 export default function Experience() {
+
   return (
     <section id="experience" className="flex flex-col items-center w-full pl-52 mt-20 my-20">
       <h2 className="text-2xl font-semibold sm:text-5xl">My Experience</h2>
@@ -23,7 +26,7 @@ export default function Experience() {
 
               <div className="absolute place-self-center h-full">
                 <div className="flex justify-center items-center size-16 rounded-full border-4 border-indigo-400 bg-zinc-950">
-                  <Image className="scale-75" src={experience.iconPath} width={42} height={42} alt="Experience type icon" />
+                  <Icon type="solid" name={experience.iconName} size={"iconSize" in experience ? experience.iconSize : "34px"} color="#818cf8" />
                 </div>
               </div>
 

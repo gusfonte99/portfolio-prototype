@@ -7,7 +7,7 @@ declare global {
 }
 
 export type IconProps = {
-  type: "regular" | "solid" | "logo";
+  type?: "regular" | "solid" | "logo";
   name: string;
   size?: string;
   color?: string;
