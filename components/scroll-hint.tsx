@@ -1,4 +1,5 @@
 export default function ScrollHint () {
+
   return (
     <div id="scroll-hint-container" className="animate-bounce -z-10 fixed bottom-0 flex flex-row justify-between w-full pl-56 pr-4 mb-6 select-none">
       <div className="flex flex-col justify-center items-center gap-2">

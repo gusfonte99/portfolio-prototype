@@ -1,4 +1,5 @@
 export default function Footer() {
+
   return (
     <footer className="flex flex-col justify-center items-center gap-2 mt-16 pl-52 mb-10">
       <small>© 2024 Gustavo Fonte. All rights reserved</small>

@@ -7,11 +7,9 @@ import { useEffect } from "react";
 import Icon from "./icon";
 import Image from "next/image";
 
-// import "boxicons"
-
 export default function Skills () {
   
-  function addAnimation() {
+  const addAnimation = () : void => {
     const scroller = document.querySelector(".scroller") as HTMLElement
     scroller?.setAttribute("data-animated", "")
 
@@ -32,7 +30,7 @@ export default function Skills () {
   }, [])
 
   return (
-    <section className="flex flex-col items-center w-full pl-52 mt-20 my-20">
+    <section id="skills" className="flex flex-col items-center w-full pl-52 mt-20 my-20">
       <h2 className="text-2xl font-semibold sm:text-5xl">My Skills</h2>
 
       <div className={`${styles.scroller} scroller`}>
