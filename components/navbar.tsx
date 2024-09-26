@@ -1,9 +1,16 @@
 'use client'
 
+import styles from "@/app/styles/logo.module.css"
+import { Chakra_Petch } from "next/font/google";
+
 import Link from "next/link";
 import { links } from "../lib/data";
 import Icon from "./icon";
 
+const chakra = Chakra_Petch({
+  weight: "400",
+  subsets: ["latin"]
+});
 
 export default function Navbar () {
 
@@ -11,8 +18,8 @@ export default function Navbar () {
     <nav className="z-[999] fixed left-0 w-52 h-full bg-neutral-950 border-r border-neutral-600/60">
       <div className="flex flex-col justify-start items-center w-full pt-10 pb-6 select-none">
         <div className="flex flex-row justify-center items-center gap-2 w-full">
-          <span className="text-8xl font-semibold">g</span>
-          <div id="console" className="w-10 h-28 bg-white"></div>
+          <span className={`${chakra.className} text-8xl font-semibold`}>g</span>
+          <div className={`${styles.terminal} w-10 h-28 bg-white`}></div>
         </div>
         
         <h3 className="text-2xl font-semibold mt-3">Gustavo</h3>
