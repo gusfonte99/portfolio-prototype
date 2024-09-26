@@ -27,9 +27,9 @@ export default function Navbar () {
       </div>
       
       <ul className="mt-12 text-center text-neutral-400 text-lg font-light border-t-[1px] border-neutral-600/60 *:border-b-[1px] *:border-neutral-600/60">
-        {links.map((link) => {
+        {links.map((link, index) => {
           return (
-            <li className="w-full">
+            <li key={index} className="w-full">
               <Link href={link.hash} className="block h-full py-3">
                 {link.name}
               </Link>
