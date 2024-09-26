@@ -7,7 +7,7 @@ import DownloadCV from "./downloadCV";
 export default function Header () {
   
   return (
-    <header id="header" className="grow flex flex-row h-screen pt-48 ml-52">
+    <header id="home" className="grow flex flex-row h-screen pt-48 ml-52">
       <div className="ml-20 pt-12">
         <div className="flex flex-col font-semibold">
           <h1 className="text-9xl">Hi,</h1>

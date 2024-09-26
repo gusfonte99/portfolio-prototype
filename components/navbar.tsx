@@ -7,19 +7,24 @@ import Link from "next/link";
 import { links } from "../lib/data";
 import Icon from "./icon";
 
-const chakra = Chakra_Petch({
-  weight: "400",
-  subsets: ["latin"]
-});
-
 export default function Navbar () {
+
+  const scrollIntoViewWithOffset = (section: string, offset: number = 60) : void => {
+    const selectedSection = document.querySelector(section) as HTMLElement
+
+    window.scrollTo({
+      top:
+        selectedSection.getBoundingClientRect().top -
+        document.body.getBoundingClientRect().top - offset
+    })
+  }
 
   return(
     <nav className="z-[999] fixed left-0 w-52 h-full bg-neutral-950 border-r border-neutral-600/60">
       <div className="flex flex-col justify-start items-center w-full pt-10 pb-6 select-none">
         <div className="flex flex-row justify-center items-center gap-2 w-full">
-          <span className={`${chakra.className} text-8xl font-semibold`}>g</span>
-          <div className={`${styles.terminal} w-10 h-28 bg-white`}></div>
+          <span className="text-8xl font-semibold">g</span>
+          <div className="w-10 h-28 bg-white"></div>
         </div>
         
         <h3 className="text-2xl font-semibold mt-3">Gustavo</h3>
@@ -29,10 +34,10 @@ export default function Navbar () {
       <ul className="mt-12 text-center text-neutral-400 text-lg font-light border-t-[1px] border-neutral-600/60 *:border-b-[1px] *:border-neutral-600/60">
         {links.map((link, index) => {
           return (
-            <li key={index} className="w-full">
-              <Link href={link.hash} className="block h-full py-3">
+            <li key={index}>
+              <button onClick={() => scrollIntoViewWithOffset(link.hash)} className="w-full h-full py-3">
                 {link.name}
-              </Link>
+              </button>
             </li>
           )
         })}

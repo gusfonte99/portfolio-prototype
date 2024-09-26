@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import { Inter_Tight } from "next/font/google";
+import { Chakra_Petch } from "next/font/google";
 import "./globals.css";
 
 import Footer from "../../components/footer";
 import ScrollHint from "../../components/scroll-hint";
 
-const inter = Inter_Tight({ subsets: ["latin"] });
+const chakra = Chakra_Petch({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"]
+});
 
 export const metadata: Metadata = {
   title: "Gustavo | Portfolio",
@@ -15,7 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="!scroll-smooth">
-      <body className={`${inter.className} text-white bg-zinc-950`}>
+      <body className={`${chakra.className} text-white bg-zinc-950`}>
         {children}
         <ScrollHint />
         <Footer />
