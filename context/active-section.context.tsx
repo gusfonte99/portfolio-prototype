@@ -13,7 +13,7 @@ type ActiveSectionContextType = {
 export const ActiveSectionContext = createContext<ActiveSectionContextType | null>(null)
 
 export function ActiveSectionProviderWrapper ({children}: ActiveSectionWrapperProps) {
-  const [activeSection, setActiveSection] = useState<SectionName>("Home")
+  const [activeSection, setActiveSection] = useState<SectionName>("Header")
 
   return(
     <ActiveSectionContext.Provider value={{ activeSection, setActiveSection }}>

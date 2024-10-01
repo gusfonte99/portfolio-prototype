@@ -1,10 +1,25 @@
-"use client";
+'use client';
 
+import { useInView } from "react-intersection-observer";
+import { useActiveSectionContext } from "../context/active-section.context";
 import Icon from "./icon";
 
 export default function About() {
+
+  const { setActiveSection } = useActiveSectionContext()
+
+  const { ref } = useInView({
+    rootMargin: "-50% 0% -50% 0%",
+    onChange: (inView) => {
+      if (inView) {
+        setActiveSection("About")
+      }
+    },
+    
+  })
+
   return (
-    <section id="about" className="flex flex-col items-center w-full pl-52 my-20">
+    <section id="about" ref={ref} className="flex flex-col items-center w-full pl-52 my-20">
       <h2 className="text-2xl font-semibold sm:text-5xl">A little bit about me..</h2>
 
       <ul className="flex flex-col gap-10 mt-16">

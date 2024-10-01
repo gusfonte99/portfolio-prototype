@@ -4,8 +4,8 @@ import webDevSurvivor from "../public/screenshots/WebDevSurvivor.png";
 
 export const links = [
   {
-    name: "Home",
-    hash: "#home",
+    name: "Header",
+    hash: "#header",
   },
   {
     name: "Skills",

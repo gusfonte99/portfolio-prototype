@@ -6,8 +6,22 @@ import { skillsData } from "../lib/data";
 import { useEffect } from "react";
 import Icon from "./icon";
 import Image from "next/image";
+import { useActiveSectionContext } from "../context/active-section.context";
+import { useInView } from "react-intersection-observer";
 
 export default function Skills () {
+
+  const { setActiveSection } = useActiveSectionContext()
+
+  const { ref } = useInView({
+    rootMargin: "-50% 0% -50% 0%",
+    onChange: (inView) => {
+      if (inView) {
+        setActiveSection("Skills")
+      }
+    },
+    
+  })
   
   const addAnimation = () : void => {
     const scroller = document.querySelector(".scroller")
@@ -35,7 +49,7 @@ export default function Skills () {
   }, [])
 
   return (
-    <section id="skills" className="flex flex-col items-center w-full pl-52 mt-20 my-20">
+    <section id="skills" ref={ref} className="flex flex-col items-center w-full pl-52 mt-20 my-20">
       <h2 className="text-2xl font-semibold sm:text-5xl">My Skills</h2>
 
       <div className={`${styles.scroller} scroller`}>

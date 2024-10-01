@@ -2,11 +2,25 @@
 
 import Icon from "./icon";
 import { experiencesData } from "../lib/data";
+import { useActiveSectionContext } from "../context/active-section.context";
+import { useInView } from "react-intersection-observer";
 
 export default function Experience() {
 
+  const { setActiveSection } = useActiveSectionContext()
+
+  const { ref } = useInView({
+    rootMargin: "-50% 0% -50% 0%",
+    onChange: (inView) => {
+      if (inView) {
+        setActiveSection("Experience")
+      }
+    },
+    
+  })
+
   return (
-    <section id="experience" className="flex flex-col items-center w-full pl-52 mt-20 my-20">
+    <section id="experience" ref={ref} className="flex flex-col items-center w-full pl-52 mt-20 my-20">
       <h2 className="text-2xl font-semibold sm:text-5xl">My Experience</h2>
 
       <div className="relative flex flex-col items-center w-full mt-16">

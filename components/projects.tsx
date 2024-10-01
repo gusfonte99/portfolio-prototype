@@ -1,9 +1,26 @@
+'use client'
+
 import Image from "next/image";
 import { projectsData } from "../lib/data";
+import { useActiveSectionContext } from "../context/active-section.context";
+import { useInView } from "react-intersection-observer";
 
 export default function Projects() {
+
+  const { setActiveSection } = useActiveSectionContext()
+
+  const { ref } = useInView({
+    rootMargin: "-50% 0% -50% 0%",
+    onChange: (inView) => {
+      if (inView) {
+        setActiveSection("Projects")
+      }
+    },
+    
+  })
+
   return (
-    <section id="projects" className="flex flex-col items-center w-full pl-52 my-20">
+    <section id="projects" ref={ref} className="flex flex-col items-center w-full pl-52 my-20">
       <h2 className="text-2xl font-semibold sm:text-5xl">My Projects</h2>
 
       <ul className="flex flex-row gap-6 w-full px-12 mt-16">

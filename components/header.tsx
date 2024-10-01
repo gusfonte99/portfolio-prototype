@@ -1,13 +1,30 @@
+'use client'
+
 import Link from "next/link";
 import Image from "next/image";
 
 import photo from "../public/profile.jpg"
 import DownloadCV from "./downloadCV";
+import { useInView } from "react-intersection-observer";
+import { useActiveSectionContext } from "../context/active-section.context";
 
 export default function Header () {
-  
+
+  const { setActiveSection } = useActiveSectionContext()
+
+  const { ref } = useInView({
+    rootMargin: "-50% 0% -50% 0%",
+    onChange: (inView) => {
+      if (inView) {
+        setActiveSection("Header")
+      }
+    },
+    
+  })
+
+
   return (
-    <header id="home" className="grow flex flex-row h-screen pt-48 ml-52">
+    <header id="header" ref={ref} className="grow flex flex-row h-screen pt-48 ml-52">
       <div className="ml-20 pt-12">
         <div className="flex flex-col font-semibold">
           <h1 className="text-9xl">Hi,</h1>
