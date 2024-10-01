@@ -1,6 +1,6 @@
 'use client'
 
-import styles from "@/app/skills.module.css"
+import styles from "@/app/styles/skills.module.css"
 
 import { skillsData } from "../lib/data";
 import { useEffect } from "react";
@@ -10,11 +10,16 @@ import Image from "next/image";
 export default function Skills () {
   
   const addAnimation = () : void => {
-    const scroller = document.querySelector(".scroller") as HTMLElement
+    const scroller = document.querySelector(".scroller")
     scroller?.setAttribute("data-animated", "")
-
-    const scrollerInner = document.querySelector(".skill_list") as HTMLElement
-    const scrollerContent : Element[] = Array.from(scrollerInner.children)
+    
+    const scrollerInner = document.querySelector(".skill_list")
+    
+    if (scrollerInner == null || undefined) {
+      throw new Error ("Element not found.")
+    }
+    
+    const scrollerContent = Array.from(scrollerInner.children)
 
     scrollerContent.forEach((item) => {
       const duplicatedItem = item.cloneNode(true) as HTMLElement
